@@ -15,6 +15,10 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL(origin),
     title,
     description,
+    icons: {
+      icon: [{ url: "/favicon.svg?v=20260821-2", type: "image/svg+xml" }],
+      shortcut: "/favicon.svg?v=20260821-2",
+    },
     openGraph: { title, description, type: "website", url: origin, images: [{ url: socialImage, width: 1536, height: 1024, alt: "Go Florida — Find Your Wild Side" }] },
     twitter: { card: "summary_large_image", title, description, images: [socialImage] },
   };
