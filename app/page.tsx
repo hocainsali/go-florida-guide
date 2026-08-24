@@ -87,17 +87,9 @@ function Hero() {
   return (
     <section className="hero" id="top" aria-labelledby="hero-title">
       <div className="hero-stage">
-        <video className="hero-background hero-background-primary" autoPlay muted loop playsInline preload="metadata" poster="/images/go-florida-hero-poster.webp" aria-hidden="true">
-          <source src="/videos/go-florida-hero.webm" type="video/webm" />
-          <source src="/videos/go-florida-hero.mp4" type="video/mp4" />
-        </video>
-        <video className="hero-background hero-background-secondary" autoPlay muted loop playsInline preload="metadata" poster="/images/go-florida-slide-2-poster.webp" aria-hidden="true">
-          <source src="/videos/go-florida-slide-2.webm" type="video/webm" />
-          <source src="/videos/go-florida-slide-2.mp4" type="video/mp4" />
-        </video>
-        <video className="hero-background hero-background-tertiary" autoPlay muted loop playsInline preload="metadata" poster="/images/go-florida-slide-3-poster.webp" aria-hidden="true">
-          <source src="/videos/go-florida-slide-3.webm" type="video/webm" />
-          <source src="/videos/go-florida-slide-3.mp4" type="video/mp4" />
+        <video className="hero-background hero-background-primary" autoPlay muted loop playsInline preload="metadata" poster="/images/go-florida-hero-poster.webp?v=20260824" aria-hidden="true">
+          <source src="/videos/go-florida-hero.webm?v=20260824" type="video/webm" />
+          <source src="/videos/go-florida-hero.mp4?v=20260824" type="video/mp4" />
         </video>
         <Header />
         <div className="hero-content">
@@ -107,12 +99,6 @@ function Hero() {
               <p>The UK’s most trusted independent guide to the Sunshine State. Skip the overwhelm, avoid the tourist traps, and build a trip your family will remember forever.</p>
               <a className="primary-button hero-primary-button" href="#hidden-gems">GRAB YOUR FREE FLORIDA STARTER KIT</a>
             </div>
-          </article>
-          <article className="hero-slide hero-slide-2">
-            <h2 className="hero-title"><span>Sun, Sea, and Family</span><span>Moments to Remember.</span></h2>
-          </article>
-          <article className="hero-slide hero-slide-3">
-            <h2 className="hero-title"><span>Everything UK Families Need</span><span>to Plan Florida Right.</span></h2>
           </article>
         </div>
           <a className="hero-story" href="#moments">
@@ -352,29 +338,6 @@ export default function Home() {
         .from(".nav-cluster, .header-utilities", { y: -32, opacity: 0, duration: 0.75, stagger: 0.06 }, 0.19)
         .from(".hero-slide-1 .hero-title span", { yPercent: 115, duration: 1.05, stagger: 0.1 }, 0.3)
         .from(".hero-slide-1 .hero-copy-block", { y: 28, opacity: 0, duration: 0.8 }, 0.7);
-
-      const heroSlides = gsap.utils.toArray<HTMLElement>(".hero-slide");
-      gsap.set(heroSlides.slice(1), { autoAlpha: 0, y: 74, filter: "blur(18px)", scale: 0.97 });
-      if (heroSlides.length === 3) {
-        const primaryVideo = document.querySelector<HTMLElement>(".hero-background-primary");
-        const secondaryVideo = document.querySelector<HTMLElement>(".hero-background-secondary");
-        const tertiaryVideo = document.querySelector<HTMLElement>(".hero-background-tertiary");
-        const heroStory = gsap.timeline({
-          scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom bottom", scrub: 0.8 },
-        });
-        heroStory
-          .to({}, { duration: 0.8 })
-          .to(heroSlides[0], { autoAlpha: 0, y: -82, filter: "blur(18px)", scale: 0.97, duration: 0.72, ease: "power2.in" })
-          .to(primaryVideo, { autoAlpha: 0, duration: 0.8, ease: "power2.inOut" }, "<")
-          .fromTo(secondaryVideo, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.8, ease: "power2.inOut" }, "<")
-          .fromTo(heroSlides[1], { autoAlpha: 0, y: 82, filter: "blur(18px)", scale: 0.97 }, { autoAlpha: 1, y: 0, filter: "blur(0px)", scale: 1, duration: 0.72, ease: "power2.out" }, "-=0.18")
-          .to({}, { duration: 0.9 })
-          .to(heroSlides[1], { autoAlpha: 0, y: -82, filter: "blur(18px)", scale: 0.97, duration: 0.72, ease: "power2.in" })
-          .to(secondaryVideo, { autoAlpha: 0, duration: 0.8, ease: "power2.inOut" }, "<")
-          .fromTo(tertiaryVideo, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.8, ease: "power2.inOut" }, "<")
-          .fromTo(heroSlides[2], { autoAlpha: 0, y: 82, filter: "blur(18px)", scale: 0.97 }, { autoAlpha: 1, y: 0, filter: "blur(0px)", scale: 1, duration: 0.72, ease: "power2.out" }, "-=0.18")
-          .to({}, { duration: 1.1 });
-      }
 
       gsap.fromTo(".hero-background", { yPercent: -1.5 }, { yPercent: 1.5, ease: "none", immediateRender: true, scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: 0.8 } });
       gsap.fromTo(".site-header", { opacity: 1, y: 0 }, { opacity: 0, y: -28, immediateRender: false, scrollTrigger: { trigger: ".hero", start: "8% top", end: "28% top", scrub: 0.8 } });

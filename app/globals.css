@@ -41,8 +41,8 @@ img { display: block; max-width: 100%; }
 
 .hero {
   position: relative;
-  height: 300svh;
-  min-height: 2040px;
+  height: 100svh;
+  min-height: 680px;
   background: #73a7c8;
   color: #f6f4ef;
 }
@@ -56,6 +56,15 @@ img { display: block; max-width: 100%; }
   isolation: isolate;
   background: #73a7c8;
   color: #f6f4ef;
+}
+
+.hero-stage::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  background: rgba(0, 0, 0, .3);
 }
 
 .hero-background {
