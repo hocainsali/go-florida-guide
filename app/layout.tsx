@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
+import "@fontsource-variable/inter";
 import "./globals.css";
+import PageMotion from "./components/PageMotion";
+import SiteFooter from "./components/SiteFooter";
+import SmoothScroll from "./components/SmoothScroll";
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
@@ -31,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>{children}<SmoothScroll /><PageMotion /><SiteFooter /></body>
     </html>
   );
 }

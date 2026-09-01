@@ -1,7 +1,6 @@
 "use client";
 /* eslint-disable @next/next/no-img-element -- local, dimensioned assets are animated directly by GSAP */
 
-import "@fontsource-variable/inter";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -18,16 +17,16 @@ type Destination = {
 
 const destinations: Destination[] = [
   { name: "THEME PARKS", location: "Disney & Universal Strategy", note: "Master the parks without the meltdowns.", image: "/images/theme-park.webp", position: "50% 50%" },
-  { name: "BUDGET & PLANNING", location: "Cost Breakdowns & Timelines", note: "What your trip will actually cost.", image: "/images/budget-planning.jpg", position: "50% 50%" },
-  { name: "BEYOND THE PARKS", location: "Beaches, Road Trips & Hidden Gems", note: "Discover the real Florida.", image: "/images/beyond-the-parks.jpg", position: "50% 50%" },
-  { name: "ACCOMMODATION", location: "Villas vs. Hotels, Area Guides", note: "Find your family’s perfect basecamp.", image: "/images/accommodation.jpg", position: "50% 50%" },
+  { name: "BUDGET & PLANNING", location: "Cost Breakdowns & Timelines", note: "What your trip will actually cost.", image: "/images/budget-planning.webp", position: "50% 50%" },
+  { name: "BEYOND THE PARKS", location: "Beaches, Road Trips & Hidden Gems", note: "Discover the real Florida.", image: "/images/beyond-the-parks.webp", position: "50% 50%" },
+  { name: "ACCOMMODATION", location: "Villas vs. Hotels, Area Guides", note: "Find your family’s perfect basecamp.", image: "/images/accommodation.webp", position: "50% 50%" },
 ];
 
 const momentImages = [
-  { src: "/images/art-deco-palms.jpg", alt: "Pastel Art Deco architecture framed by palms in Miami Beach" },
-  { src: "/images/keys-aerial.jpg", alt: "Aerial view over the blue water and islands of the Florida Keys" },
-  { src: "/images/silver-springs.jpg", alt: "Sunlit trees reflected in the clear water of a Florida spring" },
-  { src: "/images/south-beach-white.jpg", alt: "White Miami Beach architecture under a bright blue sky" },
+  { src: "/images/art-deco-palms.webp", alt: "Pastel Art Deco architecture framed by palms in Miami Beach" },
+  { src: "/images/keys-aerial.webp", alt: "Aerial view over the blue water and islands of the Florida Keys" },
+  { src: "/images/silver-springs.webp", alt: "Sunlit trees reflected in the clear water of a Florida spring" },
+  { src: "/images/south-beach-white.webp", alt: "White Miami Beach architecture under a bright blue sky" },
 ];
 
 function Header() {
@@ -51,9 +50,9 @@ function Header() {
         </a>
         <nav className="nav-cluster" aria-label="Primary navigation">
           <a href="#top">HOME</a>
-          <a href="#about">ABOUT US</a>
+          <a href="/about">ABOUT US</a>
           <a href="#hidden-gems">ALL GUIDES</a>
-          <a href="#footer">CONTACT</a>
+          <a href="/contact">CONTACT</a>
         </nav>
         <div className="header-utilities">
           <div ref={searchRef} className={`header-search ${searchOpen ? "is-open" : ""}`}>
@@ -67,7 +66,7 @@ function Header() {
               <button type="submit" aria-label="Submit search"><img src="/images/search.svg" alt="" aria-hidden="true" /></button>
             </form>
           </div>
-          <a className="trip-button" href="#hidden-gems">GOING TO FLORIDA TRIP</a>
+          <a className="trip-button site-cta" href="#hidden-gems">GOING TO FLORIDA TRIP</a>
         </div>
         <button className="menu-button" type="button" aria-expanded={menuOpen} aria-controls="mobile-menu" onClick={() => setMenuOpen((value) => !value)}>
           {menuOpen ? "CLOSE" : "MENU"}
@@ -75,9 +74,9 @@ function Header() {
       </header>
       <nav id="mobile-menu" className={`mobile-menu ${menuOpen ? "is-open" : ""}`} aria-label="Mobile navigation">
         <a href="#top" onClick={() => setMenuOpen(false)}>HOME</a>
-        <a href="#about" onClick={() => setMenuOpen(false)}>ABOUT US</a>
+        <a href="/about" onClick={() => setMenuOpen(false)}>ABOUT US</a>
         <a href="#hidden-gems" onClick={() => setMenuOpen(false)}>ALL GUIDES</a>
-        <a href="#footer" onClick={() => setMenuOpen(false)}>CONTACT</a>
+        <a href="/contact" onClick={() => setMenuOpen(false)}>CONTACT</a>
       </nav>
     </>
   );
@@ -97,12 +96,12 @@ function Hero() {
             <h1 className="hero-title" id="hero-title"><span>Plan the Ultimate Florida Family Holiday,</span><span>Without the Stress.</span></h1>
             <div className="hero-copy-block">
               <p>The UK’s most trusted independent guide to the Sunshine State. Skip the overwhelm, avoid the tourist traps, and build a trip your family will remember forever.</p>
-              <a className="primary-button hero-primary-button" href="#hidden-gems">GRAB YOUR FREE FLORIDA STARTER KIT</a>
+              <a className="primary-button hero-primary-button site-cta" href="#hidden-gems">GRAB YOUR FREE FLORIDA STARTER KIT</a>
             </div>
           </article>
         </div>
           <a className="hero-story" href="#moments">
-            <img src="/images/beat-florida-heat-young-kids.png" alt="Young children enjoying a sunny playground" width="1536" height="1024" />
+            <img src="/images/beat-florida-heat-young-kids.webp" alt="Young children enjoying a sunny playground" width="1536" height="1024" />
             <span>
               <small className="hero-story-label">FEATURED GUIDE</small>
               <b>Beat the Florida Heat<br />with Young Kids</b>
@@ -172,7 +171,7 @@ function DownloadGuide() {
             <h2 id="download-guide-title">Honest<br /><em>Florida</em> Advice,<br />Designed for<br />UK Families.</h2>
 
         <article className="download-guide-sample">
-          <video autoPlay muted loop playsInline preload="metadata" poster="/images/honest-florida-advice-left.png" aria-label="Find your Florida guide">
+          <video autoPlay muted loop playsInline preload="metadata" poster="/images/honest-florida-advice-left.webp" aria-label="Find your Florida guide">
             <source src="/videos/find-guide.mp4" type="video/mp4" />
           </video>
               <p>YOUR INDEPENDENT FLORIDA GUIDE<br />[HONEST. PRACTICAL. NO FLUFF.]</p>
@@ -180,22 +179,22 @@ function DownloadGuide() {
 
         <div className="download-guide-action">
               <p>Planning a Florida holiday can feel overwhelming. We simplify theme parks, accommodation, budgets and everything in between with clear, practical advice from people who know Florida inside out.</p>
-              <a href="#top">START PLANNING YOUR FLORIDA HOLIDAY</a>
+              <a className="site-cta" href="#top">START PLANNING YOUR FLORIDA HOLIDAY</a>
         </div>
       </div>
 
       <figure className="download-guide-feature">
-        <img src="/images/honest-florida-advice-right.jpg" alt="Cyclist riding beneath palm trees in Florida" width="1920" height="1280" />
+        <img src="/images/honest-florida-advice-right.webp" alt="Cyclist riding beneath palm trees in Florida" width="1920" height="1280" />
       </figure>
     </section>
   );
 }
 
 const floridaExperts = [
-  { name: "Beat the Florida Heat", image: "/images/featured-beat-florida-heat.png", position: "center", href: "#hidden-gems" },
-  { name: "Book Flights from the UK", image: "/images/featured-book-flights-uk.png", position: "center", href: "#resources" },
-  { name: "Theme Park Day Packing List", image: "/images/featured-theme-park-packing.png", position: "center", href: "#hidden-gems" },
-  { name: "Plan Your Florida Budget", image: "/images/featured-plan-florida-budget.jpg", position: "center", href: "#resources" },
+  { name: "Beat the Florida Heat", image: "/images/featured-beat-florida-heat.webp", position: "center", href: "#hidden-gems" },
+  { name: "Book Flights from the UK", image: "/images/featured-book-flights-uk.webp", position: "center", href: "#resources" },
+  { name: "Theme Park Day Packing List", image: "/images/featured-theme-park-packing.webp", position: "center", href: "#hidden-gems" },
+  { name: "Plan Your Florida Budget", image: "/images/featured-plan-florida-budget.webp", position: "center", href: "#resources" },
 ];
 
 function FloridaExperts() {
@@ -244,7 +243,7 @@ function PlanningGuideCta() {
   return (
     <section className="planning-guide-cta" aria-labelledby="planning-guide-title">
       <img
-        src="/images/florida-guides-expanded.jpg"
+        src="/images/florida-guides-expanded.webp"
         alt="Complete Florida travel guide collection"
         width="3072"
         height="2048"
@@ -252,75 +251,8 @@ function PlanningGuideCta() {
       />
       <h2 id="planning-guide-title">Plan Your Florida Holiday with Confidence</h2>
       <p>Get the essential guide for building a smoother, smarter and stress-free family trip from start to finish.</p>
-      <a href="#top">GET THE FLORIDA TRIP PLANNING GUIDE</a>
+      <a className="site-cta" href="#top">GET THE FLORIDA TRIP PLANNING GUIDE</a>
     </section>
-  );
-}
-
-function PreFooterCta() {
-  return (
-    <div className="pre-footer-cta-shell">
-      <section className="pre-footer-cta" aria-labelledby="pre-footer-cta-title">
-        <div className="pre-footer-cta-content">
-          <h2 id="pre-footer-cta-title">Ready to Plan Your<br />Florida Holiday?</h2>
-          <p>Get practical, honest advice made for UK families — from flights and theme parks to budgets, packing and where to stay.</p>
-          <a href="#top">Get Your Free Florida Starter Kit</a>
-        </div>
-      </section>
-    </div>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="footer" id="footer">
-      <div className="footer-grid">
-        <div className="footer-logo">
-          <img
-            src="/images/footer-go-florida-logo.svg"
-            alt="Go Florida Guide"
-            width="482"
-            height="223"
-          />
-        </div>
-        <nav className="footer-navigation" aria-label="Footer navigation">
-          <h3>NAVIGATION</h3>
-          <a href="#top">Home</a>
-          <a href="#about">About Us</a>
-          <a href="#hidden-gems">All Guides</a>
-          <a href="#footer">Contact</a>
-        </nav>
-        <div className="footer-newsletter">
-          <h3>NEWSLETTER</h3>
-          <p>Join our weekly newsletter for Florida tips and early access to guides.</p>
-          <form onSubmit={(event) => event.preventDefault()}>
-            <label className="sr-only" htmlFor="footer-email">Email address</label>
-            <input id="footer-email" name="email" type="email" placeholder="Enter your e-mail address" required />
-            <button type="submit">SUBSCRIBE</button>
-          </form>
-        </div>
-        <div className="footer-socials">
-          <h3>SOCIALS</h3>
-          <div className="social-icons" aria-label="Future social channels">
-            <a className="social-row" href="https://www.youtube.com/" target="_blank" rel="noreferrer">
-              <span className="social-icon social-icon-youtube" aria-hidden="true"><i /></span>
-              <span>YouTube</span>
-            </a>
-            <a className="social-row" href="https://www.instagram.com/" target="_blank" rel="noreferrer">
-              <span className="social-icon social-icon-instagram" aria-hidden="true"><i /></span>
-              <span>Instagram</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div className="footer-bottom">
-        <span>© 2026 GO FLORIDA</span>
-        <div className="footer-legal" aria-label="Legal information">
-          <a href="/privacy-policy">PRIVACY POLICY</a>
-          <a href="/terms-and-conditions">TERMS &amp; CONDITIONS</a>
-        </div>
-      </div>
-    </footer>
   );
 }
 
@@ -333,12 +265,6 @@ export default function Home() {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduced) return;
     const context = gsap.context(() => {
-      const load = gsap.timeline({ defaults: { ease: "power3.out" } });
-      load.from(".brand", { y: -32, duration: 0.75 }, 0.15)
-        .from(".nav-cluster, .header-utilities", { y: -32, opacity: 0, duration: 0.75, stagger: 0.06 }, 0.19)
-        .from(".hero-slide-1 .hero-title span", { yPercent: 115, duration: 1.05, stagger: 0.1 }, 0.3)
-        .from(".hero-slide-1 .hero-copy-block", { y: 28, opacity: 0, duration: 0.8 }, 0.7);
-
       gsap.fromTo(".hero-background", { yPercent: -1.5 }, { yPercent: 1.5, ease: "none", immediateRender: true, scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: 0.8 } });
       gsap.fromTo(".site-header", { opacity: 1, y: 0 }, { opacity: 0, y: -28, immediateRender: false, scrollTrigger: { trigger: ".hero", start: "8% top", end: "28% top", scrub: 0.8 } });
       gsap.fromTo(".hero-story", { opacity: 1, y: 0, pointerEvents: "auto" }, { opacity: 0, y: 28, pointerEvents: "none", immediateRender: false, scrollTrigger: { trigger: ".hero", start: "8% top", end: "28% top", scrub: 0.8 } });
@@ -379,7 +305,6 @@ export default function Home() {
           },
         },
       );
-      gsap.from(".footer-grid > *, .footer-bottom > *", { y: 35, opacity: 0, stagger: 0.07, scrollTrigger: { trigger: ".footer", start: "top 82%", end: "top 45%", scrub: 1 } });
 
       window.addEventListener("load", () => ScrollTrigger.refresh(), { once: true });
     }, root);
@@ -394,8 +319,6 @@ export default function Home() {
       <DownloadGuide />
       <FloridaExperts />
       <PlanningGuideCta />
-      <PreFooterCta />
-      <Footer />
     </main>
   );
 }
@@ -473,7 +396,7 @@ function DataCapturePopup() {
         </button>
         <img
           className="capture-popup-image"
-          src="/images/florida-popup-family-beach.jpg"
+          src="/images/florida-popup-family-beach.webp"
           alt="Family walking along a sunny Florida beach path"
           width="2250"
           height="950"
@@ -518,7 +441,7 @@ function DataCapturePopup() {
                 required
               />
             </div>
-            <button className="capture-popup-submit" type="submit">
+            <button className="capture-popup-submit site-cta" type="submit">
               Send Me the Checklist
             </button>
           </form>

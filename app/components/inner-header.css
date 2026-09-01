@@ -1,0 +1,9 @@
+.inner-page .site-header { position: relative; z-index: 40; background: var(--ink); color: #fff; }
+.inner-page .nav-cluster a[aria-current="page"] { color: var(--primary); }
+.inner-page .nav-cluster a[aria-current="page"]::after { right: 0; background: var(--primary); }
+@media (max-width: 900px) {
+  .inner-page .menu-button { z-index: 40; position: relative; color: #fff; padding: 10px 0; }
+  .inner-page .mobile-menu { padding-top: 100px; gap: 16px; }
+  .inner-page .mobile-menu a { font-size: var(--type-mobile-nav-size); padding-block: 12px; }
+  .inner-page .mobile-menu a[aria-current="page"] { color: var(--primary); }
+}
