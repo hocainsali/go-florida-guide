@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import InnerHeader from "../components/InnerHeader";
-import { FeaturedGuideCard, GuideCard, GuideHeader } from "./GuideComponents";
-import { guideArticles } from "./data";
+import GuideListingContent from "./GuideListingContent";
 import "./guide.css";
 
 const origin = "https://go-florida.hocainsali.chatgpt.site";
@@ -16,44 +15,12 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title, description, images: [`${origin}/og.png`] },
 };
 
-const categories = ["All guides", "Theme parks", "Planning", "Beaches", "Road trips"];
-
 export default function GuideListingPage() {
-  const featured = guideArticles.slice(0, 2);
-  const remaining = guideArticles.slice(2);
-
   return (
     <main className="guide-page inner-page" id="top">
       <a className="guide-skip" href="#guide-list">Skip to guides</a>
       <InnerHeader activePage="guide" />
-      <GuideHeader eyebrow="Plan with confidence" description="Straightforward Florida advice made for UK families—from the first booking decision to the days you will remember most.">
-        <nav className="guide-filters" aria-label="Guide categories">
-          {categories.map((category, index) => <span className={index === 0 ? "is-active" : ""} key={category}>{category}</span>)}
-        </nav>
-      </GuideHeader>
-
-      <section className="featured-guides inner-content" aria-labelledby="featured-guides-title">
-        <div className="guide-section-heading">
-          <h2 className="type-section-title guide-section-title--flush" id="featured-guides-title">Featured Guides</h2>
-        </div>
-        <div className="featured-guides-grid">
-          {featured.map((article) => <FeaturedGuideCard article={article} key={article.slug} />)}
-        </div>
-      </section>
-
-      <section className="all-guides inner-content" id="guide-list" aria-labelledby="all-guides-title">
-        <div className="guide-section-heading guide-section-heading--row">
-          <div>
-            <p className="guide-eyebrow type-eyebrow"><span aria-hidden="true" />Explore Florida</p>
-            <h2 className="type-section-title" id="all-guides-title">Latest Guides</h2>
-          </div>
-          <p className="type-body">Useful answers for every stage of your Florida holiday.</p>
-        </div>
-        <div className="guide-grid">
-          {remaining.map((article) => <GuideCard article={article} key={article.slug} />)}
-        </div>
-      </section>
-
+      <GuideListingContent />
     </main>
   );
 }
