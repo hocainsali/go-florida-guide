@@ -42,8 +42,7 @@ export default function InnerHeader({ activePage = "about" }: { activePage?: "ab
         <nav className="nav-cluster" aria-label="Primary navigation">
           <Link href="/">HOME</Link>
           <Link href="/about" aria-current={activePage === "about" ? "page" : undefined}>ABOUT US</Link>
-          <Link href="/#hidden-gems">ALL GUIDES</Link>
-          <Link href="/guide" aria-current={activePage === "guide" ? "page" : undefined}>GUIDE / BLOG</Link>
+          <Link href="/guide" aria-current={activePage === "guide" ? "page" : undefined}>FLORIDA GUIDES</Link>
           <Link href="/contact" aria-current={activePage === "contact" ? "page" : undefined}>CONTACT</Link>
         </nav>
         <div className="header-utilities">
@@ -67,8 +66,7 @@ export default function InnerHeader({ activePage = "about" }: { activePage?: "ab
       <nav id="mobile-menu" inert={!menuOpen} className={`mobile-menu ${menuOpen ? "is-open" : ""}`} aria-label="Mobile navigation">
         <Link href="/" onClick={() => setMenuOpen(false)}>HOME</Link>
         <Link href="/about" aria-current={activePage === "about" ? "page" : undefined} onClick={() => setMenuOpen(false)}>ABOUT US</Link>
-        <Link href="/#hidden-gems" onClick={() => setMenuOpen(false)}>ALL GUIDES</Link>
-        <Link href="/guide" aria-current={activePage === "guide" ? "page" : undefined} onClick={() => setMenuOpen(false)}>GUIDE / BLOG</Link>
+        <Link href="/guide" aria-current={activePage === "guide" ? "page" : undefined} onClick={() => setMenuOpen(false)}>FLORIDA GUIDES</Link>
         <Link href="/contact" aria-current={activePage === "contact" ? "page" : undefined} onClick={() => setMenuOpen(false)}>CONTACT</Link>
       </nav>
     </>

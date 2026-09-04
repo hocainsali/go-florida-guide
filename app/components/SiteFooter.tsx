@@ -62,8 +62,7 @@ function Footer({ isHome }: { isHome: boolean }) {
           <h3>NAVIGATION</h3>
           <Link href={isHome ? "#top" : "/#top"}>Home</Link>
           <Link href="/about">About Us</Link>
-          <Link href={isHome ? "#hidden-gems" : "/#hidden-gems"}>All Guides</Link>
-          <Link href="/guide">Guide / Blog</Link>
+          <Link href="/guide">Florida Guides</Link>
           <Link href="/contact">Contact</Link>
         </nav>
         <div className="footer-newsletter">

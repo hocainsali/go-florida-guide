@@ -51,8 +51,7 @@ function Header() {
         <nav className="nav-cluster" aria-label="Primary navigation">
           <a href="#top">HOME</a>
           <a href="/about">ABOUT US</a>
-          <a href="#hidden-gems">ALL GUIDES</a>
-          <a href="/guide">GUIDE / BLOG</a>
+          <a href="/guide">FLORIDA GUIDES</a>
           <a href="/contact">CONTACT</a>
         </nav>
         <div className="header-utilities">
@@ -76,8 +75,7 @@ function Header() {
       <nav id="mobile-menu" className={`mobile-menu ${menuOpen ? "is-open" : ""}`} aria-label="Mobile navigation">
         <a href="#top" onClick={() => setMenuOpen(false)}>HOME</a>
         <a href="/about" onClick={() => setMenuOpen(false)}>ABOUT US</a>
-        <a href="#hidden-gems" onClick={() => setMenuOpen(false)}>ALL GUIDES</a>
-        <a href="/guide" onClick={() => setMenuOpen(false)}>GUIDE / BLOG</a>
+        <a href="/guide" onClick={() => setMenuOpen(false)}>FLORIDA GUIDES</a>
         <a href="/contact" onClick={() => setMenuOpen(false)}>CONTACT</a>
       </nav>
     </>
