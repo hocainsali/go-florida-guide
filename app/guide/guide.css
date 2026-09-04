@@ -83,7 +83,7 @@
 .article-inline-image { margin: 2.6em 0; }
 .article-inline-image img { width: 100%; border-radius: 5px; }
 .article-inline-image figcaption { margin-top: 10px; color: #697069; font-size: 12px; }
-.article-guide-aside { position: sticky; top: 28px; align-self: start; color: #596059; font-size: var(--type-body-size); line-height: var(--type-body-leading); text-align: center; }
+.article-guide-aside { position: sticky; top: 28px; align-self: start; padding: 20px; border-radius: 5px; background: #fff; color: #596059; font-size: var(--type-body-size); line-height: var(--type-body-leading); text-align: center; }
 .article-guide-mockup { width: 100%; height: auto; margin: 0 auto 18px; }
 .article-guide-aside h2 { margin: 0; color: var(--ink); font-size: 22px; font-weight: var(--type-heading-weight); line-height: 1.12; letter-spacing: -.035em; text-wrap: balance; }
 .article-guide-aside > p { margin: 14px 0 18px; color: #596059; }
