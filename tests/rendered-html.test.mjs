@@ -28,6 +28,8 @@ test("server-renders the public website routes", async () => {
     ["/", /Plan the Ultimate Florida Family Holiday/],
     ["/about", /Honest, Independent/],
     ["/contact", /Florida Questions/],
+    ["/guide", /Featured Guides/],
+    ["/guide/beat-the-florida-heat-with-young-kids", /Build your day around the coolest hours/],
   ];
 
   for (const [pathname, expectedContent] of routes) {

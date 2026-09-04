@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import "./inner-header.css";
 
-export default function InnerHeader({ activePage = "about" }: { activePage?: "about" | "contact" }) {
+export default function InnerHeader({ activePage = "about" }: { activePage?: "about" | "contact" | "guide" }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
@@ -43,6 +43,7 @@ export default function InnerHeader({ activePage = "about" }: { activePage?: "ab
           <Link href="/">HOME</Link>
           <Link href="/about" aria-current={activePage === "about" ? "page" : undefined}>ABOUT US</Link>
           <Link href="/#hidden-gems">ALL GUIDES</Link>
+          <Link href="/guide" aria-current={activePage === "guide" ? "page" : undefined}>GUIDE / BLOG</Link>
           <Link href="/contact" aria-current={activePage === "contact" ? "page" : undefined}>CONTACT</Link>
         </nav>
         <div className="header-utilities">
@@ -67,6 +68,7 @@ export default function InnerHeader({ activePage = "about" }: { activePage?: "ab
         <Link href="/" onClick={() => setMenuOpen(false)}>HOME</Link>
         <Link href="/about" aria-current={activePage === "about" ? "page" : undefined} onClick={() => setMenuOpen(false)}>ABOUT US</Link>
         <Link href="/#hidden-gems" onClick={() => setMenuOpen(false)}>ALL GUIDES</Link>
+        <Link href="/guide" aria-current={activePage === "guide" ? "page" : undefined} onClick={() => setMenuOpen(false)}>GUIDE / BLOG</Link>
         <Link href="/contact" aria-current={activePage === "contact" ? "page" : undefined} onClick={() => setMenuOpen(false)}>CONTACT</Link>
       </nav>
     </>
