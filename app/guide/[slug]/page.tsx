@@ -83,7 +83,7 @@ export default async function GuideDetailPage({ params }: PageProps) {
             <nav className="article-toc" aria-label="In this guide">
               <p>In this guide</p>
               <ol>
-                {contents.map((item) => <li className={item.type === "heading3" ? "is-subsection" : ""} key={item.text}><a href={`#${headingId(item.text)}`}>{item.text}</a></li>)}
+                {contents.map((item) => <li key={item.text}><a href={`#${headingId(item.text)}`}>{item.text}</a></li>)}
               </ol>
             </nav>
           </div>
