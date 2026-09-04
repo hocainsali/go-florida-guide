@@ -39,12 +39,14 @@ export function FeaturedGuideCard({ article }: { article: GuideArticle }) {
   );
 }
 
-export function GuideHeader({ eyebrow, title, description }: { eyebrow: string; title: string; description: string }) {
+export function GuideHeader({ eyebrow, description }: { eyebrow: string; description: string }) {
   return (
     <header className="guide-page-heading inner-content">
-      <p className="guide-eyebrow type-eyebrow"><span aria-hidden="true" />{eyebrow}</p>
-      <div className="guide-heading-row">
-        <h1 className="type-page-title">{title}</h1>
+      <div className="guide-heading-copy">
+        <p className="guide-eyebrow type-eyebrow"><span aria-hidden="true" />{eyebrow}</p>
+        <h1 className="type-page-title"><span>Florida Guides.</span><span><em>Honest Insights.</em></span></h1>
+      </div>
+      <div className="guide-heading-intro">
         <p className="type-body">{description}</p>
       </div>
     </header>
