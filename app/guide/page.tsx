@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import InnerHeader from "../components/InnerHeader";
 import { FeaturedGuideCard, GuideCard, GuideHeader } from "./GuideComponents";
 import { guideArticles } from "./data";
@@ -55,17 +54,6 @@ export default function GuideListingPage() {
         </div>
       </section>
 
-      <section className="guide-newsletter" aria-labelledby="guide-newsletter-title">
-        <div className="guide-newsletter-stage">
-          <img className="guide-newsletter-collage" src="/images/guide-newsletter-collage.webp" alt="" width="1600" height="900" loading="lazy" aria-hidden="true" />
-          <div className="guide-newsletter-content">
-            <p className="guide-eyebrow type-eyebrow"><span aria-hidden="true" />Weekly Florida notes</p>
-            <h2 className="type-section-title" id="guide-newsletter-title">Get practical advice<br />in your inbox.</h2>
-            <p className="type-body">Planning tips, honest comparisons and new guides—written for UK families and sent without the fluff.</p>
-            <Link className="site-cta" href="#footer-email">JOIN THE NEWSLETTER</Link>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }
