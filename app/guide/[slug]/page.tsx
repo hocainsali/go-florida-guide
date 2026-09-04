@@ -94,15 +94,15 @@ export default async function GuideDetailPage({ params }: PageProps) {
               return <figure className="article-inline-image" key={index}><img src={block.src} alt={block.alt} width="1400" height="920" loading="lazy" />{block.caption && <figcaption>{block.caption}</figcaption>}</figure>;
             })}
           </div>
-          <aside className="article-author" aria-label="About the author">
-            <p className="guide-eyebrow">Author</p>
-            <h2>{article.author.name}</h2>
-            <p>{article.author.role}</p>
-            <p>{article.author.bio}</p>
+          <aside className="article-guide-aside" id="article-planning-guide" aria-label="Florida planning guide">
+            <img className="article-guide-mockup" src="/images/florida-trip-planning-guide.webp" alt="Florida Trip Planning guide book mockup" width="1629" height="1752" loading="lazy" />
+            <h2>Plan Your Florida Holiday with Confidence</h2>
+            <p>Get the essential guide for building a smoother, smarter and stress-free family trip from start to finish.</p>
+            <Link className="site-cta article-guide-cta" href="/#resources">Get the Florida Trip Planning Guide</Link>
             <div className="article-share" aria-label="Share this guide">
               <span>Share</span>
-              <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(articleUrl)}`} target="_blank" rel="noreferrer" aria-label="Share on Facebook">FB</a>
-              <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(articleUrl)}`} target="_blank" rel="noreferrer" aria-label="Share on LinkedIn">IN</a>
+              <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(articleUrl)}`} target="_blank" rel="noreferrer" aria-label="Share on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v2H6v4h3v7h4v-7h3l1-4h-4V9c0-.7.3-1 1-1Z" /></svg></a>
+              <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(articleUrl)}`} target="_blank" rel="noreferrer" aria-label="Share on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 8.5H3V21h3.5V8.5ZM4.75 3A2.05 2.05 0 1 0 4.75 7.1 2.05 2.05 0 0 0 4.75 3ZM21 14c0-3.8-2-5.7-4.7-5.7-2.2 0-3.1 1.2-3.7 2v-1.8H9V21h3.6v-6.2c0-1.7.3-3.3 2.4-3.3 2 0 2.1 1.9 2.1 3.4V21H21v-7Z" /></svg></a>
             </div>
           </aside>
         </div>
