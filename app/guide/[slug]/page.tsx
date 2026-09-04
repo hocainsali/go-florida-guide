@@ -68,7 +68,7 @@ export default async function GuideDetailPage({ params }: PageProps) {
       <InnerHeader activePage="guide" />
       <article>
         <header className="article-header inner-content">
-          <Link className="article-back" href="/guide">← Back to Guide</Link>
+          <Link className="article-back" href="/guide">← Florida Guides</Link>
           <div className="article-heading-grid">
             <div>
               <p className="guide-eyebrow type-eyebrow"><span aria-hidden="true" />{article.category}</p>
