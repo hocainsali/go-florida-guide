@@ -56,12 +56,11 @@ export default function GuideListingPage() {
       </section>
 
       <section className="guide-newsletter" aria-labelledby="guide-newsletter-title">
-        <div className="guide-newsletter-inner inner-content">
-          <div>
+        <div className="guide-newsletter-stage inner-content">
+          <img className="guide-newsletter-collage" src="/images/guide-newsletter-collage.webp" alt="" width="1536" height="1024" loading="lazy" aria-hidden="true" />
+          <div className="guide-newsletter-content">
             <p className="guide-eyebrow type-eyebrow"><span aria-hidden="true" />Weekly Florida notes</p>
             <h2 className="type-section-title" id="guide-newsletter-title">Get practical advice<br />in your inbox.</h2>
-          </div>
-          <div className="guide-newsletter-action">
             <p className="type-body">Planning tips, honest comparisons and new guides—written for UK families and sent without the fluff.</p>
             <Link className="site-cta" href="#footer-email">JOIN THE NEWSLETTER</Link>
           </div>
