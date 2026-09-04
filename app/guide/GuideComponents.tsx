@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element -- local editorial assets preserve the current site image treatment */
 import Link from "next/link";
+import type { ReactNode } from "react";
 import type { GuideArticle } from "./data";
 
 export function GuideMetadata({ article, compact = false }: { article: GuideArticle; compact?: boolean }) {
@@ -39,7 +40,7 @@ export function FeaturedGuideCard({ article }: { article: GuideArticle }) {
   );
 }
 
-export function GuideHeader({ eyebrow, description }: { eyebrow: string; description: string }) {
+export function GuideHeader({ eyebrow, description, children }: { eyebrow: string; description: string; children?: ReactNode }) {
   return (
     <header className="guide-page-heading inner-content">
       <div className="guide-heading-copy">
@@ -48,6 +49,7 @@ export function GuideHeader({ eyebrow, description }: { eyebrow: string; descrip
       </div>
       <div className="guide-heading-intro">
         <p className="type-body">{description}</p>
+        {children}
       </div>
     </header>
   );

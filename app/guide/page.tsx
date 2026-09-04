@@ -27,16 +27,15 @@ export default function GuideListingPage() {
     <main className="guide-page inner-page" id="top">
       <a className="guide-skip" href="#guide-list">Skip to guides</a>
       <InnerHeader activePage="guide" />
-      <GuideHeader eyebrow="Plan with confidence" description="Straightforward Florida advice made for UK families—from the first booking decision to the days you will remember most." />
-
-      <nav className="guide-filters inner-content" aria-label="Guide categories">
-        {categories.map((category, index) => <span className={index === 0 ? "is-active" : ""} key={category}>{category}</span>)}
-      </nav>
+      <GuideHeader eyebrow="Plan with confidence" description="Straightforward Florida advice made for UK families—from the first booking decision to the days you will remember most.">
+        <nav className="guide-filters" aria-label="Guide categories">
+          {categories.map((category, index) => <span className={index === 0 ? "is-active" : ""} key={category}>{category}</span>)}
+        </nav>
+      </GuideHeader>
 
       <section className="featured-guides inner-content" aria-labelledby="featured-guides-title">
         <div className="guide-section-heading">
-          <p className="guide-eyebrow type-eyebrow"><span aria-hidden="true" />Start here</p>
-          <h2 className="type-section-title" id="featured-guides-title">Featured Guides</h2>
+          <h2 className="type-section-title guide-section-title--flush" id="featured-guides-title">Featured Guides</h2>
         </div>
         <div className="featured-guides-grid">
           {featured.map((article) => <FeaturedGuideCard article={article} key={article.slug} />)}

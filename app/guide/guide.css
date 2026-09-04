@@ -6,7 +6,7 @@
 .guide-eyebrow { margin: 0; display: flex; align-items: center; gap: .55em; text-transform: uppercase; letter-spacing: .01em; font-weight: 650; }
 .guide-eyebrow > span { width: .38em; height: .38em; flex: 0 0 auto; border-radius: 50%; background: var(--primary); }
 
-.guide-page-heading { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: start; padding-top: var(--inner-section-space); padding-bottom: var(--inner-section-space); }
+.guide-page-heading { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: start; padding-top: var(--inner-section-space); padding-bottom: clamp(32px, 3vw, 44px); border-bottom: 1px solid #cfd3cf; }
 .guide-heading-copy { min-width: 0; container-type: inline-size; }
 .guide-page-heading .guide-eyebrow { margin-bottom: 28px; }
 .guide-page-heading h1 { margin: 0; font-size: min(var(--type-page-size), 9cqi); }
@@ -15,8 +15,8 @@
 .guide-heading-intro { max-width: 500px; justify-self: end; padding-top: 36px; }
 .guide-heading-intro p { margin: 0; color: #454c47; text-wrap: pretty; }
 
-.guide-filters { display: flex; flex-wrap: wrap; gap: 10px; padding-top: 20px; padding-bottom: 20px; border-top: 1px solid #cfd3cf; border-bottom: 1px solid #cfd3cf; }
-.guide-filters span { padding: 10px 16px; border: 1px solid #c8cdc8; border-radius: 999px; font-size: 13px; font-weight: 620; text-transform: uppercase; }
+.guide-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.guide-filters span { display: inline-flex; min-height: 32px; align-items: center; padding: 6px 11px; border: 1px solid #c8cdc8; border-radius: 999px; font-size: 10px; font-weight: 650; line-height: 1; text-transform: uppercase; white-space: nowrap; }
 .guide-filters .is-active { border-color: var(--primary); background: var(--primary); color: #fff; }
 
 .featured-guides,
@@ -25,6 +25,7 @@
 .guide-section-heading { margin-bottom: clamp(24px, 2.2vw, 34px); }
 .guide-section-heading h2,
 .related-guides-heading h2 { margin: .45em 0 0; }
+.guide-section-heading .guide-section-title--flush { margin-top: 0; }
 .guide-section-heading--row { display: flex; justify-content: space-between; align-items: end; gap: 40px; }
 .guide-section-heading--row > p { max-width: 390px; margin: 0 0 .4em; color: #626862; }
 .featured-guides-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 2vw, 32px); }
@@ -120,7 +121,7 @@
 @media (max-width: 760px) {
   .guide-page-heading { grid-template-columns: 1fr; gap: 32px; }
   .guide-heading-intro { justify-self: start; max-width: 640px; padding-top: 0; }
-  .guide-filters { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .guide-filters { width: 100%; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
   .guide-filters::-webkit-scrollbar { display: none; }
   .guide-filters span { flex: 0 0 auto; }
   .featured-guides-grid,
