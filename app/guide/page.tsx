@@ -56,8 +56,8 @@ export default function GuideListingPage() {
       </section>
 
       <section className="guide-newsletter" aria-labelledby="guide-newsletter-title">
-        <div className="guide-newsletter-stage inner-content">
-          <img className="guide-newsletter-collage" src="/images/guide-newsletter-collage.webp" alt="" width="1536" height="1024" loading="lazy" aria-hidden="true" />
+        <div className="guide-newsletter-stage">
+          <img className="guide-newsletter-collage" src="/images/guide-newsletter-collage.webp" alt="" width="1600" height="900" loading="lazy" aria-hidden="true" />
           <div className="guide-newsletter-content">
             <p className="guide-eyebrow type-eyebrow"><span aria-hidden="true" />Weekly Florida notes</p>
             <h2 className="type-section-title" id="guide-newsletter-title">Get practical advice<br />in your inbox.</h2>
