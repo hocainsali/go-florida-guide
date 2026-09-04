@@ -3,13 +3,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import InnerHeader from "../../components/InnerHeader";
-import { GuideMetadata, RelatedGuides } from "../GuideComponents";
+import { RelatedGuides } from "../GuideComponents";
 import { getGuideBySlug, guideArticles } from "../data";
 import "../guide.css";
 
 const origin = "https://go-florida.hocainsali.chatgpt.site";
 
 type PageProps = { params: Promise<{ slug: string }> };
+
+function headingId(text: string) {
+  return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+}
 
 function renderParagraph(block: Extract<(typeof guideArticles)[number]["content"][number], { type: "paragraph" }>, index: number) {
   if (!block.segments) return <p key={index}>{block.text}</p>;
@@ -49,6 +53,7 @@ export default async function GuideDetailPage({ params }: PageProps) {
   const article = getGuideBySlug(slug);
   if (!article) notFound();
   const related = guideArticles.filter((item) => item.slug !== article.slug).slice(0, 3);
+  const contents = article.content.filter((block) => block.type === "heading2" || block.type === "heading3");
   const articleUrl = `${origin}/guide/${article.slug}`;
   const schema = {
     "@context": "https://schema.org",
@@ -75,7 +80,12 @@ export default async function GuideDetailPage({ params }: PageProps) {
               <h1 className="type-page-title">{article.title}</h1>
               <p className="article-excerpt">{article.excerpt}</p>
             </div>
-            <GuideMetadata article={article} />
+            <nav className="article-toc" aria-label="In this guide">
+              <p>In this guide</p>
+              <ol>
+                {contents.map((item) => <li className={item.type === "heading3" ? "is-subsection" : ""} key={item.text}><a href={`#${headingId(item.text)}`}>{item.text}</a></li>)}
+              </ol>
+            </nav>
           </div>
         </header>
 
@@ -86,8 +96,8 @@ export default async function GuideDetailPage({ params }: PageProps) {
         <div className="article-layout inner-content">
           <div className="article-body">
             {article.content.map((block, index) => {
-              if (block.type === "heading2") return <h2 key={index}>{block.text}</h2>;
-              if (block.type === "heading3") return <h3 key={index}>{block.text}</h3>;
+              if (block.type === "heading2") return <h2 id={headingId(block.text)} key={index}>{block.text}</h2>;
+              if (block.type === "heading3") return <h3 id={headingId(block.text)} key={index}>{block.text}</h3>;
               if (block.type === "paragraph") return renderParagraph(block, index);
               if (block.type === "list") return <ul key={index}>{block.items.map((item) => <li key={item}>{item}</li>)}</ul>;
               if (block.type === "quote") return <blockquote key={index}>{block.text}</blockquote>;
